@@ -37,3 +37,19 @@ def getEnglishCount(message):
 
 
 def removeNonLetters(message):
+    lettersOnly = []
+    for symbol in message:
+        if symbol in LETTERS_AND_SPACE:
+            lettersOnly.append(symbol)
+    return ''.join(lettersOnly)
+
+
+def isEnglish(message), wordPercentage=20, letterPercentage=85):
+    # Be default, 20% of the words must exist in the dictionary file, and
+    # 85% of all the characters in the message must be letters or spaces
+    # (not punctuation or numbers).
+    wordsMatch = getEnglishCount(message) * 100 >= wordPercentage
+    numLetters = len(removeNonLetters(message))
+    messageLettersPercentage = float(numLetters) / len(message) * 100
+    lettersMatch = messageLettersPercentage >= letterPercentage
+    return wordsMatch and lettersMatch
