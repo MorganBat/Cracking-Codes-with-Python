@@ -95,7 +95,7 @@ def removeSolvedLettersFromMapping(letterMapping):
         solvedLetters = []
         for cipherletter in LETTERS:
             if len(letterMapping[cipherletter]) == 1:
-                solvedLetters.sppend(letterMapping[cipherletter][0])
+                solvedLetters.append(letterMapping[cipherletter][0])
                 
         # If a letter is solved, then it cannot possible be a potential
         # decryption letter for a different ciphertext letter, so we
